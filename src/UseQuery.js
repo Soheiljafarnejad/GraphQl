@@ -12,8 +12,10 @@ function UseQuery() {
   `;
 
   const { loading, error, data, refetch } = useQuery(GET_USER, {
-    variables: { id: 1 },
+    variables: { id: 2 },
     notifyOnNetworkStatusChange: true,
+    fetchPolicy: "network-only", // Used for first execution
+    nextFetchPolicy: "cache-first", // Used for subsequent executions
   });
 
   if (loading) return <p>Loading...</p>;
