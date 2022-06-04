@@ -1,4 +1,4 @@
-import { gql, useQuery } from "@apollo/client";
+import { gql, NetworkStatus, useQuery } from "@apollo/client";
 import "./App.css";
 
 function App() {
@@ -14,7 +14,7 @@ function App() {
 
   const { loading, error, data, refetch } = useQuery(GET_USER, {
     variables: { id: 1 },
-    pollInterval: 500,
+    notifyOnNetworkStatusChange: true,
   });
 
   if (loading) return <p>Loading...</p>;
