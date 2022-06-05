@@ -3,8 +3,8 @@ import { gql, useQuery } from "@apollo/client";
 function UseQuery() {
   const GET_USER = gql`
     query ($id: ID!) {
-      user(id: $id) {
-        id
+      soheil : user(id: $id) {
+      a : id
         email
         username
       }
@@ -29,9 +29,9 @@ function UseQuery() {
       <h1>UseQuery</h1>
       {data && (
         <div>
-          <p>{data.user.id}</p>
-          <p>{data.user.username}</p>
-          <p>{data.user.email}</p>
+          <p>{data.soheil.a}</p>
+          <p>{data.soheil.username}</p>
+          <p>{data.soheil.email}</p>
         </div>
       )}
       <button onClick={() => refetch({ id: 2 })}>refetch</button>
