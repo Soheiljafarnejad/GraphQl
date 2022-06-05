@@ -1,12 +1,14 @@
 import "./App.css";
-import UseLazyQuery from "./UseLazyQuery";
-import UseQuery from "./UseQuery";
+import UseLazyQuery from "./graphql/UseLazyQuery";
+import UseMutation from "./graphql/UseMutation";
+import UseQuery from "./graphql/UseQuery";
 
 function App() {
   return (
     <div className="App">
       <UseQuery />
       <UseLazyQuery />
+      <UseMutation />
     </div>
   );
 }
